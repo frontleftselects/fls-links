@@ -1,219 +1,137 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FRONT LEFT SELECTS</title>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Front Left Selects</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,900;1,900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-```
-html, body { height: 100%; }
-
-body {
-  background-color: #0A0A0A;
-  color: #F5F5F5;
-  font-family: 'DM Mono', monospace;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 40px 20px;
-}
-
-.container {
-  width: 100%;
-  max-width: 480px;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-}
-
-.header {
-  border: 2px solid #F5F5F5;
-  border-bottom: none;
-  padding: 28px 24px 22px;
-  background: #0A0A0A;
-}
-
-.label {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  color: #E8180C;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-
-h1 {
-  font-family: 'Anton', sans-serif;
-  font-size: 52px;
-  line-height: 0.92;
-  letter-spacing: 0.01em;
-  text-transform: uppercase;
-  color: #F5F5F5;
-}
-
-.selects {
-  display: block;
-  font-family: 'Anton', sans-serif;
-  font-size: 24px;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: #F5F5F5;
-  margin-top: 10px;
-}
-
-.links {
-  border: 2px solid #F5F5F5;
-  border-top: none;
-  display: flex;
-  flex-direction: column;
-}
-
-.link-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 24px;
-  text-decoration: none;
-  color: #F5F5F5;
-  border-bottom: 1px solid rgba(245,245,245,0.1);
-  position: relative;
-  overflow: hidden;
-}
-
-.link-item:last-child {
-  border-bottom: none;
-}
-
-.link-item::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 0;
-  background: #E8180C;
-  transition: width 0.2s ease;
-  z-index: 0;
-}
-
-.link-item:hover::before {
-  width: 100%;
-}
-
-.link-left {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  position: relative;
-  z-index: 1;
-}
-
-.link-platform {
-  font-family: 'DM Mono', monospace;
-  font-size: 9px;
-  font-weight: 500;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(245,245,245,0.75);
-  min-width: 72px;
-}
-
-.link-name {
-  font-family: 'Anton', sans-serif;
-  font-size: 18px;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  color: #F5F5F5;
-}
-
-.link-arrow {
-  position: relative;
-  z-index: 1;
-  font-size: 18px;
-  color: #F5F5F5;
-  opacity: 0.6;
-}
-
-.footer {
-  border: 2px solid #F5F5F5;
-  border-top: none;
-  padding: 14px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.footer-text {
-  font-family: 'DM Mono', monospace;
-  font-size: 9px;
-  letter-spacing: 0.15em;
-  color: rgba(245,245,245,0.4);
-  text-transform: uppercase;
-}
-
-.dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #E8180C;
-  animation: pulse 2s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(0.7); }
-}
-```
-
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #000;
+      color: #fff;
+      font-family: 'DM Mono', monospace;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 80% 20%, rgba(191,0,255,0.07) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 10% 80%, rgba(200,255,0,0.05) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .card { width: 100%; max-width: 560px; position: relative; z-index: 1; }
+    .header { margin-bottom: 48px; animation: fadeup 0.7s ease 0.1s both; }
+    .header-label {
+      font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+      color: #C8FF00; margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
+    }
+    .header-label::before {
+      content: ''; display: inline-block; width: 6px; height: 6px;
+      background: #C8FF00; border-radius: 50%; animation: blink 1.2s infinite;
+    }
+    .logo {
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 900;
+      font-size: clamp(72px, 18vw, 120px); line-height: 0.85;
+      text-transform: uppercase; letter-spacing: -1px;
+    }
+    .logo .selects {
+      font-size: clamp(32px, 8vw, 52px); letter-spacing: 6px;
+      font-weight: 700; color: #fff; display: block; margin-top: 8px;
+    }
+    .e2e-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: #BF00FF; color: #000; font-size: 9px;
+      letter-spacing: 2px; text-transform: uppercase;
+      padding: 5px 12px; font-weight: 500; margin-top: 20px;
+    }
+    .links { display: flex; flex-direction: column; gap: 2px; animation: fadeup 0.7s ease 0.3s both; }
+    .link-item {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 22px 24px; background: #080808; border: 1px solid #111;
+      text-decoration: none; color: #fff; transition: all 0.2s;
+      position: relative; overflow: hidden; cursor: pointer;
+    }
+    .link-item::before {
+      content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+      width: 0; background: var(--accent); transition: width 0.25s ease; z-index: 0;
+    }
+    .link-item:hover::before { width: 3px; }
+    .link-item:hover { border-color: var(--accent); background: #0d0d0d; }
+    .link-item:hover .link-title { color: var(--accent); }
+    .link-item:hover .link-arrow { color: var(--accent); transform: translate(3px, -3px); }
+    .link-left { display: flex; flex-direction: column; gap: 6px; position: relative; z-index: 1; }
+    .link-platform { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: #444; }
+    .link-title {
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 900;
+      font-size: 22px; text-transform: uppercase; letter-spacing: 1px; transition: color 0.2s;
+    }
+    .link-arrow { font-size: 18px; color: #333; transition: color 0.2s, transform 0.2s; position: relative; z-index: 1; flex-shrink: 0; }
+    .footer {
+      margin-top: 40px; display: flex; justify-content: space-between;
+      align-items: center; animation: fadeup 0.7s ease 0.5s both;
+    }
+    .footer-copy { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: #666; }
+    .footer-tag { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: #666; }
+    .footer-tag span { color: #C8FF00; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+    @keyframes fadeup { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
   </style>
 </head>
 <body>
-  <div class="container">
-
-```
-<div class="header">
-  <div class="label">// Links</div>
-  <h1>FRONT<br/>LEFT</h1>
-  <span class="selects">Selects</span>
-</div>
-
-<div class="links">
-  <a class="link-item" href="https://www.youtube.com/channel/UCXxKsWLRNiei-uduEXJzsSg" target="_blank" rel="noopener">
-    <div class="link-left">
-      <span class="link-platform">YouTube</span>
-      <span class="link-name">Watch E2E Series</span>
-    </div>
-    <span class="link-arrow">&#8599;</span>
-  </a>
-  <a class="link-item" href="https://soundcloud.com/front-left-selects" target="_blank" rel="noopener">
-    <div class="link-left">
-      <span class="link-platform">SoundCloud</span>
-      <span class="link-name">FLS Digs + E2E Sample Edits</span>
-    </div>
-    <span class="link-arrow">&#8599;</span>
-  </a>
-  <a class="link-item" href="https://tally.so/r/44jJZk" target="_blank" rel="noopener">
-    <div class="link-left">
-      <span class="link-platform">Tally</span>
-      <span class="link-name">E2E Challenge Application</span>
-    </div>
-    <span class="link-arrow">&#8599;</span>
-  </a>
-</div>
-
-<div class="footer">
-  <span class="footer-text">Front Left Selects - E2E</span>
-  <div class="dot"></div>
-</div>
-```
-
+<div class="card">
+  <div class="header">
+    <div class="header-label">// Links</div>
+    <h1 class="logo">FRONT<br>LEFT<span class="selects">SELECTS</span></h1>
+    <div class="e2e-badge">● E2E — Edit to Edit</div>
   </div>
+ 
+  <div class="links">
+    <a href="https://www.youtube.com/channel/UCXxKsWLRNiei-uduEXJzsSg" target="_blank" class="link-item" style="--accent:#FF0000;">
+      <div class="link-left">
+        <span class="link-platform">YouTube</span>
+        <span class="link-title">Watch E2E Series</span>
+      </div>
+      <span class="link-arrow">↗</span>
+    </a>
+ 
+    <a href="https://soundcloud.com/front-left-selects" target="_blank" class="link-item" style="--accent:#FF5500;">
+      <div class="link-left">
+        <span class="link-platform">SoundCloud</span>
+        <span class="link-title">FLS Digs + E2E Sample Edits</span>
+      </div>
+      <span class="link-arrow">↗</span>
+    </a>
+ 
+    <a href="https://tally.so/r/44jJZk" target="_blank" class="link-item" style="--accent:#C8FF00;">
+      <div class="link-left">
+        <span class="link-platform">Tally</span>
+        <span class="link-title">E2E Challenge Application</span>
+      </div>
+      <span class="link-arrow">↗</span>
+    </a>
+ 
+    <a href="https://www.instagram.com/frontleftselectss" target="_blank" class="link-item" style="--accent:#BF00FF;">
+      <div class="link-left">
+        <span class="link-platform">Instagram</span>
+        <span class="link-title">Follow @frontleftselectss</span>
+      </div>
+      <span class="link-arrow">↗</span>
+    </a>
+  </div>
+ 
+  <div class="footer">
+    <span class="footer-copy">© 2025 Front Left Selects</span>
+    <span class="footer-tag">30 min. <span>Front-row access.</span></span>
+  </div>
+</div>
 </body>
 </html>
